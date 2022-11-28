@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+.nav, .nav-customer{
+    padding: 0 20px;
+    background-color:#B2B1B1;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+}
+.nav .nav-right ul ,.nav-customer .nav-right ul{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.nav .nav-right ul li a ,.nav-customer .nav-right ul li a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #D9D9D9;
+    color: black;
+    border-radius: 15px;
+}
+/* .nav-right ul li a:last-child{
+    width: 90px;
+} */
+
+.nav .nav-right ,.nav-customer .nav-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    /* background-image: url("/Pj-online-shop/img/img.png");
+    height: 100%; */
+    background-color: #C6C7E1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5%;
+    position: sticky;
+    background-size: cover;
+}
+h1{
+    margin-top:5%;
+}
+.home-btn{
+    margin-top: -5%;
+    display: flex;
+    gap: 50px;
+}
+.home-btn button{
+    padding: 10px;
+    width: 150px;
+    border-radius: 20px;
+    background-color:  #8A96FF;
+}
+.homePage{
+    display: flex;
+    /* padding-left: 10%; */
+    justify-content: center;
+    /* align-items: center; */
+    padding-top: 2%;
+    background-color:#C6C7E1;
+}
+.homePage .img{
+    display: flex;
+    width: 50%;
+    /* background-color: red; */
+    justify-content: center;
+    /* margin-left: 5%; */
+}
+.homePage .info{
+    display: flex;
+    width: 50%;
+    align-items: flex-start;
+    flex-direction: column;
+    /* background-color: aqua; */
+}
+.homePage .img img{
+    height: 75%;
+    width: 70%;
+    
+}
+.homePage .info .info-top{
+    display: flex;
+    gap: 20px;  
+}
+.homePage .info .form-info{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 25px;    
+}
+.homePage .info button{
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+}
+#dialog-info{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+dialog {
+    position: fixed;
+    top: 10vh;
+    left: 30%;
+    width: 40%;
+    /* z-index: 100; */
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+dialog header {
+    background-color: var(--main-color);
+    color: white;
+    font-size: 1.25rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+dialog section {
+    padding: 1rem;
+
+}
+
+dialog menu {
+    padding: 1rem;
+    margin: 0;
+}
+dialog menu button{
+    padding: 10px;
+    width: 20%;
+}
+
+dialog label {
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+dialog input {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+dialog input:focus {
+  background-color: #f0e6fd;
+  outline: none;
+  border-color: var(--main-color-light);
+}
+
