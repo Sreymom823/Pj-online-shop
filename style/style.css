@@ -7,13 +7,15 @@
 body{
     height: 100vh;
     width: 100%;
+    background-color: #C6C7E1;
+
 }
 .nav, .nav-customer{
     padding: 0 20px;
     background-color:#B2B1B1;
     display: flex;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 20px;
 }
 .nav .nav-right ul ,.nav-customer .nav-right ul{
     display: flex;
@@ -26,7 +28,9 @@ body{
     background-color: #D9D9D9;
     color: black;
     border-radius: 15px;
+    cursor: pointer;
 }
+
 /* .nav-right ul li a:last-child{
     width: 90px;
 } */
@@ -61,27 +65,34 @@ h1{
     border-radius: 20px;
     background-color:  #8A96FF;
 }
-.homePage{
+.page{
     display: flex;
-    /* padding-left: 10%; */
+    flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #C6C7E1;;
+}
+.homePage{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     padding-top: 2%;
-    background-color:#C6C7E1;
 }
 .homePage .img{
     display: flex;
     width: 50%;
-    /* background-color: red; */
     justify-content: center;
-    /* margin-left: 5%; */
+
 }
 .homePage .info{
     display: flex;
     width: 50%;
     align-items: flex-start;
     flex-direction: column;
-    /* background-color: aqua; */
+ 
 }
 .homePage .img img{
     height: 75%;
@@ -96,13 +107,20 @@ h1{
     margin-top: 5%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    font-size: 25px;    
+    gap: 15px;
+    font-size: 19px;    
 }
 .homePage .info button{
     padding: 10px;
     width: 100%;
     font-size: 20px;
+}
+
+#buy{
+    cursor: pointer;
+    background-color:  #8A96FF;
+    border-radius: 15px;
+
 }
 #dialog-info{
     position: fixed;
@@ -115,7 +133,7 @@ h1{
 }
 dialog {
     position: fixed;
-    top: 10vh;
+    top: 5vh;
     left: 30%;
     width: 40%;
     /* z-index: 100; */
@@ -127,7 +145,6 @@ dialog {
     overflow: hidden;
 }
 dialog header {
-    background-color: var(--main-color);
     color: white;
     font-size: 1.25rem;
     width: 100%;
@@ -135,7 +152,7 @@ dialog header {
 }
 
 dialog section {
-    padding: 1rem;
+    padding: 10px;
 
 }
 
@@ -168,4 +185,53 @@ dialog input:focus {
   outline: none;
   border-color: var(--main-color-light);
 }
+
+
+#searchBtn{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 60vh;
+    /* background: #000; */
+}
+
+#searchBtn #header{
+    /* background-color: beige; */
+    text-align: center; 
+    margin-bottom: 2%;
+}
+#searchBtn #header hr{
+    padding: 1px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#searchBtn #search-input {
+    margin-top: 2%;
+    width: 50%;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* background-color: black; */
+    padding: 15px;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+#searchBtn #data-show{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-sizing: border-box;
+    background-color: aqua;
+    width: 100%;
+    padding:  20px;
+    height: 60vh;
+}
+#searchBtn #data-show #card{
+    box-sizing: border-box;
+    width: 23%;
+    background-color: #8A96FF;
+    height: 55vh;
+    padding: 10px;
+    margin-left: 20px;
+}
+
 

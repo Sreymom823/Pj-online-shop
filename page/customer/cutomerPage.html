@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../style/style.css">
+</head>
+<body>
+    <div class="nav-customer">
+        <div class="nav-left">
+            <img src="/img/logo.png" alt="" width="30%">
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a id="home" >Home</a></li>
+                <li><a id="search" >Search</a></li>
+                <li><a id="view" >View</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="page">
+        <div class="homePage">
+            <div class="img"><img src="/img/dress1.webp" alt="" ></div>
+            <div class="info">
+                <div class="info-top">
+                    <img src="/img/dress1.webp" alt="" width="25%">
+                    <img src="/img/dress2.webp" alt="" width="25%">
+                </div>
+                <div class="form-info">
+                    <p>Product name: <span id="product-nameGet">Event Dress</span></p>
+                    <p>Prices: <span id="priceGet">$54</span></p>
+                    <p>Colors: <span id="colorGet">white & pink</span></p>
+                    <p>Size: <span id="sizeGet">L</span></p>
+                    <p>Purches: <span id="purchesGet">1</span></p>
+                    <button id="buy">Buy Now</button>
+    
+                </div>
+            </div>
+        </div>
+        <div class="homePage">
+            <div class="img"><img src="/img/dress1.webp" alt="" ></div>
+            <div class="info">
+                <div class="info-top">
+                    <img src="/img/dress1.webp" alt="" width="25%">
+                    <img src="/img/dress2.webp" alt="" width="25%">
+                </div>
+                <div class="form-info">
+                    <p>Product name: <span id="product-nameGet">Event Dress</span></p>
+                    <p>Prices: <span id="priceGet">$54</span></p>
+                    <p>Colors: <span id="colorGet">white & pink</span></p>
+                    <p>Size: <span id="sizeGet">L</span></p>
+                    <p>Purches: <span id="purchesGet">1</span></p>
+                    <button id="buy">Buy Now</button>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dialog-info" >
+        <dialog open>
+          <section>
+            <label>Name Product</label>
+            <input id="name-Product" type="text" placeholder="Name Product" />
+
+            <label>Price</label>
+            <input id="price" type="text" placeholder="Price"/>
+
+            <label for="">Colors</label> 
+            <input id="color" type="text" placeholder="colors"/>
+
+            <label for="">Size </label>
+            <input id="size" type="text" placeholder="size"/>
+
+            <label for="">Purches</label> 
+            <input id="purches" type="number" placeholder="purches"/>
+
+            <label for="">Img</label> 
+            <input id="image" type="file" placeholder="images"/>
+          </section>
+          <menu>
+            <!-- When clicking on button,  call the right function  -->
+            <button id="cancel">Cancel</button>
+            <!-- When clicking on button,  call the right function  -->
+            <button id="create">Create</button>
+          </menu>
+        </dialog>
+    </div>
+    <div id="searchBtn">
+        <div id="header">
+            <input id="search-input" type="text" placeholder="Search">
+            <hr>
+        </div>
+        <div id="data-show">
+            <div id="card">
+                hi
+            </div>
+            <div id="card">
+                hi
+            </div>
+            <div id="card">
+                hi
+            </div>
+            <div id="card">
+                hi
+            </div>
+        </div>
+    </div>
+    <div id="viewBtn">hi</div>
+    
+</body>
+<script src="app.js"></script>
+
+</html>
