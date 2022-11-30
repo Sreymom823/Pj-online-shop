@@ -1,7 +1,7 @@
 let homePage = document.querySelector(".homePage");
 // console.log(homePage);
 const toBuy = document.querySelector("#buy");
-const dialog_info = document.querySelector("#dialog-info");
+const dialog_info = document.querySelector("#dialog-buy");
 
 // let toCreateProduct = document.querySelector("#addProduct");
 // console.log(toCreateProduct);
@@ -37,6 +37,7 @@ search.addEventListener("click",function(){
     hide(viewBtn);
     show(searchBtn);
 } );
+
 
 
 // function toSearchPage(event){

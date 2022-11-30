@@ -11,12 +11,12 @@
 <body>
     <div class="nav">
         <div class="nav-left">
-            <img src="/img/logo.png" alt="" width="150px">
+            <img src="/img/logo.png" alt="" width="30%">
         </div>
         <div class="nav-right">
             <ul> 
-                <li><a href="/page/cutomerPage.html">Customer</a></li>
-                <li><a href="/page/sellerPage.html">Seller</a></li>
+                <li><a href="/page/customer/cutomerPage.html">Customer</a></li>
+                <li><a href="/page/seller/sellerPage.html">Seller</a></li>
             </ul>
         </div>
     </div>
@@ -89,6 +89,27 @@
             <label>Price</label>
             <input id="price" type="text" placeholder="Price"/>
 
+            <label for="">Img</label> 
+            <input id="image" type="file" placeholder="images"  id="avatar" name="avatar"
+            accept="image/png, image/jpeg, image/webp"/>
+            <!-- <img  id="imgchange" src="#" alt=""> -->
+          </section>
+  
+          <menu>
+            <button id="cancel">Cancel</button>
+            <button id="create">Create</button>
+          </menu>
+        </dialog>
+    </div>
+    <!-- <div id="dialog-info">
+        <dialog open>
+          <section>
+            <label>Name Product</label>
+            <input id="name-Product" type="text" placeholder="Name Product" />
+
+            <label>Price</label>
+            <input id="price" type="text" placeholder="Price"/>
+
             <label for="">Colors</label> 
             <input id="color" type="text" placeholder="colors"/>
 
@@ -109,7 +130,7 @@
             <button id="create">Create</button>
           </menu>
         </dialog>
-    </div>
+    </div> -->
 </body>
 <!-- <script src="/page/customer/app.js"></script> -->
 <script src="/page/seller/app.js"></script>

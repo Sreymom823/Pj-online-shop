@@ -1,4 +1,5 @@
 let toCreateProduct = document.querySelector("#addProduct");
+const container = document.querySelector("#container")
 // console.log(toCreateProduct);
 
 const dialog_info = document.querySelector("#dialog-info");
@@ -129,80 +130,89 @@ toCreateProduct.addEventListener("click",showdialogTocreate )
 
 // }
 
-// function clearDialog(){
-//     let getnamePrduct = document.querySelector("#name-Product");
-//     getnamePrduct.textContent = "";
-//     let getPrice = document.querySelector("#price");
-//     getPrice.textContent = "";
-//     let getColors = document.querySelector("#color");
-//     getColors.textContent = "";
-//     let getSize = document.querySelector("#size");
-//     getSize.textContent = "";
-//     let getpurches = document.querySelector("#purches");
-//     getpurches.textContent = "";
-//     let getimg = document.querySelector("#image");
-//     getimg.textContent = "";
-// }
+function clearDialog(){
+    let getnamePrduct = document.querySelector("#name-Product");
+    getnamePrduct.textContent = "";
+    let getPrice = document.querySelector("#price");
+    getPrice.textContent = "";
+}
 
 let information = [
     {
-        // nameProduct:"Jeans",
+        nameProduct:"T-shirt",
         image:"/img/T-shirt1.webp",
         Price:"$49",
         
     },
-    {   
-        // nameProduct:"Jeans",
-        image:"/img/T-shirt1.webp",
-        Price:"$69",
+    {
+        nameProduct:"Suit",
+        image:"/img/suit3.jpg",
+        Price:"$15",
 
     },
     {
-        // nameProduct:"Jeans",
-        image:"/img/T-shirt1.webp",
-        Price:"$19",
+        nameProduct:"Suit",
+        image:"/img/duit4.png",
+        Price:"$15",
 
     },
     {
-        // nameProduct:"Jeans",
+        nameProduct:"T-shirt",
         image:"/img/T-shirt1.webp",
-        Price:"$19",
+        Price:"$25",
 
     },
     {
-        // nameProduct:"Jeans",
-        image:"/img/T-shirt1.webp",
-        Price:"$19",
+        nameProduct:"Dress",
+        image:"/img/dress1.webp",
+        Price:"$36",
 
     },
-] ;
-console.log(information.img)
-function create (event){
-    let getnamePrduct = document.querySelector("#name-Product").value;
-    let getPrice = document.querySelector("#price").value;
-    // let getColors = document.querySelector("#color").value;
-    // let getSize = document.querySelector("#size").value;
-    // let getpurches = document.querySelector("#purches").value; 
-    let getimg = document.querySelector("#image").value;
-    // for (let index = 0; index < foods.length; index++) {
-    //     let food = information[index];
+    {
+        nameProduct:"Suit",
+        image:"/img/suit2.webp",
+        Price:"$15",
 
+    },
+    {
+        nameProduct:"Dress",
+        image:"/img/dress2.webp",
+        Price:"$15",
+
+    },
+    {
+        nameProduct:"Suit",
+        image:"/img/suit1.jpg",
+        Price:"$15",
+
+    },
+    {
+        nameProduct:"Dress",
+        image:"/img/dress2.webp",
+        Price:"$15",
+
+    },
+];
+
+function loadProduct (event){
+    
     let Data = document.querySelector("#data");
+    Data.remove();
+    
+    Data = document.createElement("div");
+    Data.id = "data";
+    container.appendChild(Data);
+    
 
     let namePro = document.createElement("div");
     namePro.id = "Tshirt";
-    // Data.appendChild(namePro);
 
     let header = document.createElement("div");
     header.id= "header";
-    // header.textContent = "Jeans"
-
 
     let btns = document.createElement("button");
-    btns.textContent = getnamePrduct;
-    btns.textContent = "T-shirt"
+    btns.textContent = "All Product"
   
-
     let allCard = document.createElement("div");
     allCard.id ="allCard";
 
@@ -210,7 +220,6 @@ function create (event){
         let informations=information[i]
         let groupCard = document.createElement("div");
         groupCard.id = "groupCard";
-        // groupCard.dataset.i = i;
         
         let img=document.createElement("div");
         img.id = "img "
@@ -218,14 +227,19 @@ function create (event){
         let imgs = document.createElement("img");
         imgs.style.height = "350px"
         imgs.src =  informations.image ;
+        
+        let text = document.createElement("h1");
+        text.textContent = informations.nameProduct;
 
-
-    
         let btn = document.createElement("button");
         btn.id = "forPrice"; 
-        btn.style.width = "100%"
-        btn.textContent = informations.Price;
-    
+        btn.style.width = "100%";
+        btn.style.textAlign = "center";
+
+
+        btn.textContent = informations.Price ;
+        // + ": " + informations.Price ;
+        console.log(btn)
         let icon = document.createElement("div");
         icon.id = "icon";
     
@@ -244,8 +258,8 @@ function create (event){
         icon.appendChild(imgEdit);
 
         img.appendChild(imgs);
+        img.appendChild(text);
         img.appendChild(btn);
-        console.log(img)
         groupCard.appendChild(img);
         groupCard.appendChild(icon);
         allCard.appendChild(groupCard);
@@ -257,36 +271,48 @@ function create (event){
 
 
     Data.appendChild(namePro);
-    clearDialog()
+    // container.appendChild(Data);
     hide(dialog_info);
 
 }
-create()
+loadProduct()
 
-// toCreate(information)
+function toCreate (event){
+    let getPrice = document.querySelector("#price").value;
+    let getImg = document.querySelector("#image").value;
+    let getnamePrduct = document.querySelector("#name-Product").value;
+    // let informations=information
+    // getImg.src = informations[i].image
 
-function toCancel(){
-    hide(dialog_info)
+
+    let newInformation = {
+        nameProduct:getnamePrduct,
+        img : getImg,
+        // image: "https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?cs=srgb&dl=pexels-pixabay-247502.lpg&fm=jpg",
+        Price:getPrice,
+    }
+
+    
+    information.push(newInformation)
+    hide(dialog_info);
+    loadProduct() 
+    console.log(information)
+    clearDialog()
+
 }
 
 function deleteCard(event) {
-    // 1- Check the event if raised on the button delete
     if (event.target.className == "trush"){
       event.target.parentElement.parentElement.remove()
     }
-   //  2  if yes, get the parent and remove it from the  bookList
 }
 
-// let toDelete = document.querySelector(".trush")
-// console.log(toDelete);
-
 let toEdite = document.querySelector(".edite");
-
-toDelete.addEventListener("click", deleteCard)
-
 
 let cancelBtn = document.querySelector("#cancel");
 let createBtn = document.querySelector("#create");
 
-cancelBtn.addEventListener("click", toCancel)
-// createBtn.addEventListener("click", toCreate)
+cancelBtn.addEventListener("click", function(){
+    hide(dialog_info)
+})
+createBtn.addEventListener("click", toCreate)
