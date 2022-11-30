@@ -198,10 +198,10 @@ dialog input:focus {
   border-color: var(--main-color-light);
 }
 
-.trush{
+.trush, .edite{
     cursor: pointer;
-
 }
+
 
 
 

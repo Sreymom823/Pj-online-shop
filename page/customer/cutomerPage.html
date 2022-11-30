@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CutomerPage</title>
     <link rel="stylesheet" href="../../style/style.css">
 </head>
 <body>
@@ -64,32 +64,29 @@
             <label>Name Product</label>
             <input id="name-Product" type="text" placeholder="Name Product" />
 
-            <label>Price</label>
-            <input id="price" type="text" placeholder="Price"/>
+            <label>Email</label>
+            <input id="email" type="email" placeholder="Email"/>
 
-            <label for="">Colors</label> 
-            <input id="color" type="text" placeholder="colors"/>
+            <label for="">Phome number</label> 
+            <input id="p-number" type="tel" placeholder="Phone number"/>
 
-            <label for="">Size </label>
-            <input id="size" type="text" placeholder="size"/>
+            <label for="">location</label>
+            <input id="location" type="text" placeholder="location"/>
 
             <label for="">Purches</label> 
-            <input id="purches" type="number" placeholder="purches"/>
-
-            <label for="">Img</label> 
-            <input id="image" type="file" placeholder="images"/>
+            <input id="purches" type="number" placeholder="#purches"/>
           </section>
           <menu>
             <!-- When clicking on button,  call the right function  -->
             <button id="cancels">Cancel</button>
             <!-- When clicking on button,  call the right function  -->
-            <button id="order">Create</button>
+            <button id="order">order</button>
           </menu>
         </dialog>
     </div>
     <div id="searchBtn" style="display:none ;">
         <div id="header">
-            <input id="search-input" type="text" placeholder="Search">
+            <input id="search-input" type="text" placeholder="Search" onkeyup="searchBar()" >
             <hr>
         </div>
         <div id="data-show">
@@ -107,8 +104,12 @@
             </div>
         </div>
     </div>
-    <div id="viewBtn">hi</div>
-    
+    <div id="viewBtn" style="display: none;">
+        <div id="container" >
+            <div id="data">
+            </div>
+        </div>
+    </div>
 </body>
 <script src="app.js"></script>
 
