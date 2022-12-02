@@ -23,11 +23,11 @@
     <div id="container">
         <div id="head">
             <button id="addProduct">Add Product</button>
-            <div id="nameProduct">
+            <!-- <div id="nameProduct">
                 <button id="t-shirtBtn">Tshirt</button>
                 <button id="dressBtn">Event Dress</button>
                 <button id="pants">Pants</button>
-            </div>
+            </div> -->
         </div>
         <div id="data">
             <!-- <div id="Tshirt">
@@ -88,49 +88,33 @@
 
             <label>Price</label>
             <input id="price" type="text" placeholder="Price"/>
+            
+            <label>colors</label>
+            <input id="color" type="text" placeholder="Colors"/>
+            <label>Size</label>
+            <input id="size" type="text" placeholder="size"/>
+            <label>Purches</label>
+            <input id="purches" type="number" placeholder="purches"/>
 
             <label for="">Img</label> 
-            <input id="image" type="text" placeholder="images"  id="avatar" name="avatar"
-        />
+            <input id="image" type="text" placeholder="images"  id="avatar" name="avatar"/>
             <!-- <img  id="imgchange" src="#" alt=""> -->
           </section>
   
           <menu>
-            <button id="cancel">Cancel</button>
-            <button id="create">Create</button>
+            <button id="cancel" onclick="toCancels()">Cancel</button>
+            <button id="create" >Create</button>
           </menu>
         </dialog>
     </div>
-    <!-- <div id="dialog-info">
-        <dialog open>
-          <section>
-            <label>Name Product</label>
-            <input id="name-Product" type="text" placeholder="Name Product" />
+    <div class="datafromCustomer" style="display:none ;">
+        <p class="getNameCus">Name: <span id="getNameCus" ></span></p>
+        <p class="getEamilCus">Email:<span id="getEamilCus"></span></p>
+        <p class="getPhoneCus">Phone Number:<spa id="getPhoneCus"></span></p>
+        <p class="getlocationCus">location:<span id="getlocationCus"></span></p>
+        <p class="getpurchesCus">Purches:<span id="getpurchesCus"></span></p>
 
-            <label>Price</label>
-            <input id="price" type="text" placeholder="Price"/>
-
-            <label for="">Colors</label> 
-            <input id="color" type="text" placeholder="colors"/>
-
-            <label for="">Size </label>
-            <input id="size" type="text" placeholder="size"/>
-
-            <label for="">Purches</label> 
-            <input id="purches" type="number" placeholder="purches"/>
-
-            <label for="">Img</label> 
-            <input id="image" type="file" placeholder="images"/>
-          </section>
-  
-          <menu>
-            <!-- When clicking on button,  call the right function  -->
-            <button id="cancel">Cancel</button>
-            <!-- When clicking on button,  call the right function  -->
-            <button id="create">Create</button>
-          </menu>
-        </dialog>
-    </div> -->
+    </div>
 </body>
 <!-- <script src="/page/customer/app.js"></script> -->
 <script src="/page/seller/app.js"></script>
