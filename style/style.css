@@ -450,7 +450,9 @@ select{
     padding-bottom: 5%;
 }
 .left{
-margin: 10px;
+    margin: 5px;
+    display: flex;
+    gap: 10px;
 }
 .title{
     margin-left: 10px;
@@ -462,5 +464,6 @@ margin: 10px;
 .data{
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
