@@ -42,13 +42,27 @@ view.addEventListener("click", function(){
 toCancel.addEventListener("click", function(){
     hide(dialog_buy);
 })
-order.addEventListener("click", function(){
+order.addEventListener("click", orderProduct)
+
+//  LOCAL STORAGE ---------------------------------------------------------
+let dicInforCus = []
+// function saveCustomerInformation() {
+    //     localStorage.setItem("dicInforCus", JSON.stringify(dicInforCus));
+    // } 
+    // function loadCustomerInformation() {
+    //     let cusDataStorage = JSON.parse(localStorage.getItem("dicInforCus"));
+    //     if (cusDataStorage !== null) {
+        //         dicInforCus = cusDataStorage;
+        //     }
+        // }
+        /* get information customer when they order product ___________________ */
+            
+function orderProduct(event){
     let NameProducts= document.querySelector("#name-Product").value;
     let Phones =document.querySelector("#email").value ;
     let Emails =document.querySelector("#p-number").value;
     let Locations =document.querySelector("#location").value;
     let Purchess =document.querySelector("#purches").value;
-    console.log(NameProducts)
     getInfor ={
         NameProduct: NameProducts,
         Phone : Phones,
@@ -56,21 +70,32 @@ order.addEventListener("click", function(){
         Location :Locations,
         Purches :Purchess,
     }
-    customerInfo.push(getInfor);
-    hide(dialog_buy);
-    console.log(customerInfo);
-});
+    dicInforCus.push(getInfor);
+    if (getInfor.NameProduct !="" && getInfor.NameProduct !="" && getInfor.Phone !="" && getInfor.Location !="" && getInfor.Purches !=""){
+        hide(dialog_buy);
+        console.log(dicInforCus);
+        saveCustomerInformation()
+    }else{
+        window.alert("Please fill all information!👏")
+    }
 
+    // let dialogCard = document.querySelector("#dialogCard");
+    // show(dialogCard)
+};
+// orderProduct()
+// saveCustomerInformation()
+
+/*  get local storage to ues___________________________________________ */
 let information = JSON.parse(localStorage.getItem("information"));
+/*  reder all product to show in view page__________________________________________ */
 function rederProduct (event){  
+
     let Data = document.querySelector("#data");
     Data.remove();
-    
     Data = document.createElement("div");
     Data.id = "data";
     container.appendChild(Data);
     
-
     let namePro = document.createElement("div");
     namePro.id = "Tshirt";
 
@@ -78,7 +103,12 @@ function rederProduct (event){
     header.id= "header";
 
     let btns = document.createElement("button");
-    btns.textContent = "All Product"
+    btns.id = "btna";
+    btns.textContent = "All Product";
+    btns.style.background = "teal";
+    btns.style.marginRight = "20px"
+    btns.style.borderRadius = "10px"
+    
   
     let allCard = document.createElement("div");
     allCard.id ="allCard";
@@ -91,22 +121,25 @@ function rederProduct (event){
         // groupCard.textContent = informations.nameProduct ;
         let title = document.createElement("h4");
         title.textContent = informations.nameProduct
-              // console.log(groupCard[i])
+        title.style.color = "teal"
  
         let img=document.createElement("div");
-        img.id = "img "
-    
+        img.id = "img ";
+        
         let imgs = document.createElement("img");
         // imgs.style.height = "350px"
         imgs.style.width = "100%"
         
         imgs.src =  informations.image ;
+        imgs.style.cursor = "pointer";
+        imgs.addEventListener("click", detailInformation)
 
 
         let btn = document.createElement("button");
         btn.id = "forPrice"; 
         btn.style.width = "100%";
-        // btn.style.textAlign = "center";
+        btn.style.marginLeft = "-0.5%";
+        btn.style.textAlign = "center";
 
         btn.textContent +="Price: " +informations.Price ;
         let icon = document.createElement("div");
@@ -114,7 +147,7 @@ function rederProduct (event){
     
         let imgStar = document.createElement("img");
         imgStar.className = "star";
-        imgStar.src = "/img/star.webp" ;
+        imgStar.src = "/img/star.png" ;
         imgStar.style.width = "15%"
         imgStar.style.cursor = "pointer";
 
@@ -153,10 +186,7 @@ function rederProduct (event){
 }
 rederProduct();
 
-/* to search title */
-let allCards = document.querySelector("#allCard");
-// console.log(allCards);
-
+/* to search title ______________________________________________________*/
 let btnSearch = document.querySelector("#search-input");
 btnSearch.addEventListener("keyup", searchBar);
 
@@ -164,7 +194,7 @@ function searchBar(){
     let wordSearch = (btnSearch.value.toLocaleLowerCase());
     let myCard = document.querySelectorAll(".groupCard");
 
-    console.log(wordSearch);
+    // console.log(wordSearch);
     for (let i = 0; i < myCard.length; i++){
         let valueCard = myCard[i];
         let text = valueCard.firstElementChild.textContent.toLocaleLowerCase();
@@ -175,47 +205,12 @@ function searchBar(){
             valueCard.style.display = "none";
         }  
     }
-    // console.log(text)
 }
 
 
-// function searchBar(){
-//     let btnSearch = document.querySelector("#search-input").value.toLowerCase();
-//     // let allCard  = document.querySelectorAll("#allCard");
-//     let card = document.querySelectorAll(".groupCard");
-//     // let name = document.getElementsByTagName('h4');
-
-//     // for (var i = 0; i < name.length; i++ ){
-//     //     let number = card.getElementsByTagName('h4')[0];
-//     //     if (number){
-//     //         let value = number.textContent || number.innerHTML;
-//     //         if(value.toLowerCase().indexOf(btnSearch) >-1){
-//     //             card.style.display = "";
-//     //         }else{
-//     //             card.style.display = "none"
-//     //         }
-//     //         console.log(value)
-            
-//     //     }
-//     // }
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
+/* All Data to show on home page_______________________________________ */
 function createDatatoshow(){
     let page = document.querySelector(".page");
-
-
     let gethomePage = document.querySelector(".homePage");
     gethomePage.remove();
     gethomePage =document.createElement("div");
@@ -257,6 +252,8 @@ function createDatatoshow(){
         createSpanC.id ="colorGet";
         createSpanC.textContent = informations.Color;
         createColor.appendChild(createSpanC);
+        // console.log(createColor)
+        // console.log()
 
         let createSize = document.createElement("p");
         createSize.textContent = "Size: ";
@@ -265,12 +262,27 @@ function createDatatoshow(){
         createSpanS.textContent = informations.Size;
         createSize.appendChild(createSpanS);
 
-        let createPurches = document.createElement("p");
-        createPurches.textContent = "Product Name: ";
-        let createSpanPur = document.createElement("span");
-        createSpanPur.id = "purchesGet";
-        createSpanPur.textContent = informations.Purches;
-        createPurches.appendChild(createSpanPur);
+        let createID = document.createElement("p");
+        createID.textContent = "ID product: ";
+        let createSpanID = document.createElement("span");
+        createSpanID.id = "idGet";
+        createSpanID.textContent = informations.ID;
+        createID.appendChild(createSpanID);
+
+        let gStar = document.createElement("div");
+        gStar.className = "gStar";
+        let createStar1 = document.createElement("img");
+        createStar1.src = "/img/star.png";
+        createStar1.style.width = "10%"
+        let createStar2 = document.createElement("img");
+        createStar2.src = "/img/star.png"
+        createStar2.style.width = "10%"
+        let createStar3 = document.createElement("img");
+        createStar3.src = "/img/star.png";
+        createStar3.style.width = "10%"
+        gStar.appendChild(createStar1);
+        gStar.appendChild(createStar2);
+        gStar.appendChild(createStar3);
 
         let createBtnBuy = document.createElement("button");
         createBtnBuy.id = "buy";
@@ -278,12 +290,14 @@ function createDatatoshow(){
         createBtnBuy.addEventListener("click",  function(){
             show(dialog_buy);
         })
-        
+
         formInfor.appendChild(product_name);
         formInfor.appendChild(createPrices);
         formInfor.appendChild(createColor);
         formInfor.appendChild(createSize);
-        formInfor.appendChild(createPurches);
+        formInfor.appendChild(createID);
+        formInfor.appendChild(gStar);
+
         formInfor.appendChild(createBtnBuy);
 
         gethomePage.appendChild(showImg);
@@ -293,4 +307,104 @@ function createDatatoshow(){
     page.appendChild(gethomePage);
     // console.log(page);
 }
-createDatatoshow()
+createDatatoshow();
+
+
+
+/*  create dialog detail information ___________________________________*/
+function detailInformation(event){
+    let index = event.target.parentElement.parentElement.dataset.index;
+    let detailInformation=information[index];
+
+    console.log(index);
+
+    show(dialog_Detail );
+    let dialog = document.querySelector("#dialog")
+    let detailAboutPro = document.querySelector(".detailAboutPro");
+    detailAboutPro.remove();
+    detailAboutPro =document.createElement("div");
+    detailAboutPro.className = "detailAboutPro";
+
+    let showImg = document.createElement("div");
+    showImg.className = "img";
+    let myImg = document.createElement("img");
+    myImg.src = detailInformation.image;
+    myImg.style.width = "300px";
+ 
+
+    showImg.appendChild(myImg);
+
+    let formInfor = document.createElement("div");
+    formInfor.className = "form-info";
+    formInfor.style.marginLeft = "5%"
+
+    let product_name = document.createElement("p");
+    product_name.textContent = "Product Name: ";
+    let createSpanPN = document.createElement("span");
+    createSpanPN.id = "product-nameGet";
+    createSpanPN.textContent = detailInformation.nameProduct;
+    product_name.appendChild(createSpanPN);
+
+    let createPrices = document.createElement("p");
+    createPrices.textContent = "Price: ";
+    let createSpanP = document.createElement("span");
+    createSpanP.id = "priceGet";
+    createSpanP.textContent = detailInformation.Price;
+    createPrices.appendChild(createSpanP);
+
+    let createColor= document.createElement("p");
+    createColor.textContent = "Color: ";
+    let createSpanC = document.createElement("span");
+    createSpanC.id ="colorGet";
+    createSpanC.textContent = detailInformation.Color;
+    createColor.appendChild(createSpanC);
+
+    let createSize = document.createElement("p");
+    createSize.textContent = "Size: ";
+    let createSpanS = document.createElement("span");
+    createSpanS.id = "sizeGet";
+    createSpanS.textContent = detailInformation.Size;
+    createSize.appendChild(createSpanS);
+
+    let createID = document.createElement("p");
+    createID.textContent = "ID product: ";
+    let createSpanID = document.createElement("span");
+    createSpanID.id = "idGet";
+    createSpanID.textContent = detailInformation.ID;
+    createID.appendChild(createSpanID);
+
+    let createBtnBuy = document.createElement("button");
+    createBtnBuy.id = "buyss";
+    createBtnBuy.style.marginBottom = "-30px"
+    createBtnBuy.textContent = "Order";
+    createBtnBuy.addEventListener("click",  function(){
+        hide(dialog_Detail)
+        show(dialog_buy);
+    });
+    let createBtbCancel = document.createElement("button");
+    createBtbCancel.id = "tocancel";
+    createBtbCancel.textContent = "Cancel";
+    createBtbCancel.addEventListener("click",function(){
+        hide(dialog_Detail);
+    })
+
+        
+    formInfor.appendChild(product_name);
+    formInfor.appendChild(createPrices);
+    formInfor.appendChild(createColor);
+    formInfor.appendChild(createSize);
+    formInfor.appendChild(createID);
+    formInfor.appendChild(createBtnBuy);
+    formInfor.appendChild(createBtbCancel);
+
+    detailAboutPro.appendChild(showImg);
+    detailAboutPro.appendChild(formInfor)
+    dialog.appendChild(detailAboutPro);
+
+}
+
+let dialog_Detail = document.querySelector("#dialog-Detail");
+console.log(dialog_Detail);
+
+
+

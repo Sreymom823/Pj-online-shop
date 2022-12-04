@@ -1,3 +1,4 @@
+/* for home page */
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +10,9 @@ body{
     width: 100%;
     background-color: #C6C7E1;
 
+}
+.nav-left{
+    padding: 10px;
 }
 .nav, .nav-customer{
     padding: 0 20px;
@@ -31,18 +35,12 @@ body{
     cursor: pointer;
 }
 
-/* .nav-right ul li a:last-child{
-    width: 90px;
-} */
-
 .nav .nav-right ,.nav-customer .nav-right{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .container{
-    /* background-image: url("/Pj-online-shop/img/img.png");
-    height: 100%; */
     background-color: #C6C7E1;
     display: flex;
     flex-direction: column;
@@ -54,6 +52,9 @@ body{
 h1{
     margin-top:5%;
 }
+.container img{
+    margin-top: -3%;
+}
 .home-btn{
     margin-top: -5%;
     display: flex;
@@ -64,6 +65,7 @@ h1{
     width: 150px;
     border-radius: 20px;
     background-color:  #8A96FF;
+
 }
 .page{
     display: flex;
@@ -71,10 +73,11 @@ h1{
     justify-content: center;
     width: 100%;
     box-sizing: border-box;
-    background-color: #C6C7E1;;
+    background-color: #C6C7E1;
+    padding-bottom: 5%;
+    /* gap: 5%; */
 }
-.homePage{
-    /* border: 1px black solid; */
+.homePage ,.detailAboutPro{
     width: 100%;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -83,37 +86,19 @@ h1{
     padding-top: 2%;
     gap: 20px;
     margin-bottom: 5%;
-    /* margin-bottom: 4%; */
 }
 .homePage .img{
     display: flex;
     width: 45%;
     justify-content: center;
+    margin-bottom: 5%;
 
 }
 .homePage .img img{
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-
+    height: 90%;
 }
-/* .homePage{
-    display: flex;
-    width: 50%;
-    align-items: flex-start;
-    flex-direction: column;
- 
-} */
-/* .homePage .img img{
-    height: 75%;
-    width: 70%;
-    
-} */
-/* .homePage .info-top{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    gap: 20px;  
-} */
+
 .homePage .form-info{
     margin-top: 5%;
     display: flex;
@@ -123,6 +108,17 @@ h1{
     font-weight: bold;
     width: 30%; 
     /* background: pink; */
+}
+
+/* both with view page -----------------------------------------both with view page*/
+.detailAboutPro .form-info{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 20px;   
+    font-weight: bold;
+    width: 30%; 
 }
 .homePage .form-info p{
     text-shadow: 2px 2px 4px #000000;
@@ -136,11 +132,9 @@ h1{
     background: rgba(0, 128, 128, 0.735);
     border: none;
     color: white;
-    /* background: #000; */
-    /* border-radius: 50px; */
 }
 
-#buy{
+#buy {
     cursor: pointer;
     background-color:  #8A96FF;
     border-radius: 15px;
@@ -175,7 +169,6 @@ dialog header {
     font-size: 1.25rem;
     width: 100%;
     padding: 1rem;
-    /* background-color: #8A96FF; */
 }
 
 dialog section {
@@ -217,12 +210,37 @@ dialog input:focus {
 }
 
 
+
+
+/*  for search container -------------------------------------------------------------------------for search container*/
 #searchBtn{
-    /* background-color: aqua; */
     width: 100%;
     height: 60vh;
     /* background: #000; */
+
 }
+#header input{
+    background: none;
+    border: 1px black solid;
+    
+}
+#header input::placeholder{
+  color: black;
+    
+}
+
+select{
+    border: 1px solid #ccc;
+    background-color:  #9599b9f5;
+    font-size: 20px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 10px;
+    color: grey;
+}
+/* .searchBtn input{
+    background:none;
+} */
 
 #searchBtn #header{
     /* background-color: beige; */
@@ -275,7 +293,7 @@ dialog input:focus {
     width: 10%;
     padding: 10px;
     margin-left: 3%;
-    background-color:  #8A96FF;
+    /* background-color:  #8A96FF; */
     color: white;
     border: none;
     font-size: 15px;
@@ -340,13 +358,21 @@ dialog input:focus {
 #img button{
     width: 100%;
     margin-left: -0.3%;
+    /* background: #000; */
 
 }
 .groupCard button{
     margin-left: -0.9%;
 
+    background: rgba(0, 128, 128, 0.735);
     display: flex;
     text-align: center;
+    /* color: black; */
+}
+
+#hearder button {
+    color: black;
+
 }
 #icon{
     display: flex;
@@ -360,3 +386,81 @@ dialog input:focus {
 /* #forPrice button{
     text-align: center;
 } */
+#dialog{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    /* background-color: #C6C7E1; */
+    /* background-color: #8A96FF; */
+    background-color: #C6C7E1;
+    color: rgba(0, 128, 128, 0.735);
+
+
+
+}
+#dialog-Detail{  
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    /* font-size: 10px; */
+
+}
+#tocancel, #buyss{
+    padding: 10px;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 10%;
+    background: rgba(0, 128, 128, 0.735);
+    border: none;
+    color: white;
+    border-radius: 15px;
+    
+}
+#dialog{
+    width: 60%;
+    margin-left: -10%;
+    /* font-size: 20px; */
+}
+.img img{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+/* #priceGet span{
+    text-align: center;
+} */
+
+.footer{
+    background-color: white;
+    margin:5% ;
+    font-size: 20px;
+    padding-top: 5%;
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    padding-bottom: 5%;
+
+    
+}
+
+.foot #bt{
+    /* text-align: center; */
+    margin-left: 40%;
+    padding-bottom: 5%;
+}
+.left{
+margin: 10px;
+}
+.title{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.f-right .title{
+    margin-left: -4px;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+}
+

@@ -10,6 +10,9 @@ body{
     background-color: #C6C7E1;
 
 }
+.nav-left{
+    padding: 10px;
+}
 .nav{
     padding: 0 20px;
     background-color:#B2B1B1;
@@ -55,7 +58,10 @@ body{
     width: 10%;
     padding: 10px;
     margin-left: 3%;
-    background-color:  #8A96FF;
+    /* background-color:  #8A96FF; */
+    background: rgba(0, 128, 128, 0.735);
+
+
     color: white;
     border: none;
     font-size: 15px;
@@ -87,7 +93,7 @@ body{
 
 }
 #header button{
-    background-color: #8A96FF;
+    background: rgba(0, 128, 128, 0.735);
 }
 #allCard{
     display: flex; 
@@ -174,6 +180,7 @@ dialog section {
 dialog menu {
     padding: 1rem;
     margin: 0;
+    display: flex;
 }
 dialog menu button{
     padding: 10px;
@@ -204,13 +211,69 @@ dialog input:focus {
   border-color: var(--main-color-light);
 }
 
+
 .trush, .edite{
     cursor: pointer;
 }
 
 
+/* Data customer store  ------------------------------------Data customer store*/
+.aboutCustomer{
+    width: 91.5%;
+    background-color: white;
+    padding: 2% 0%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 4%;
+}
+.storeData1{
+    border: 1px teal solid;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.storeData1 p{
+    margin: 10px;
+}
 
 
+/* footer------------------------------------------footer */
+.footer{
+    background-color: white;
+    margin:5%;
+    font-size: 20px;
+    padding-top: 5% ;
+    border: 1px black solid;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    padding-bottom: 5%;
+    
+}
+.foot{
+    font-size: 20px;
+    padding-top: 5%;
+    
+}
+.foot #bt{
+    /* text-align: center; */
+    margin-left: 40%;
+    padding-bottom: 5%;
+}
+.left{
+margin: 10px;
+}
+.title{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.f-right .title{
+    margin-left: -4px;
+}
+.data{
+    display: flex;
+    flex-direction: column;
+}
 
 
 

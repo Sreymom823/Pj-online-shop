@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seller</title>
-    <!-- <link rel="stylesheet" href="/style/style.css"> -->
     <link rel="stylesheet" href="/page/seller/sellerStyle.css">
 </head>
 <body>
     <div class="nav">
         <div class="nav-left">
-            <img src="/img/logo.png" alt="" width="30%">
+            <img src="/img/logo.png" alt="" width="10%">
         </div>
         <div class="nav-right">
             <ul> 
@@ -22,62 +21,15 @@
     </div>
     <div id="container">
         <div id="head">
-            <button id="addProduct">Add Product</button>
-            <!-- <div id="nameProduct">
-                <button id="t-shirtBtn">Tshirt</button>
-                <button id="dressBtn">Event Dress</button>
-                <button id="pants">Pants</button>
-            </div> -->
+            <button id="addProduct" onclick="showdialogTocreate()">Add Product</button>
+            <button id="customerData" >Customer Data</button>
         </div>
         <div id="data">
-            <!-- <div id="Tshirt">
-                <div id="header">
-                    <button>Tshirt</button>
-                </div>
-                <div id="allCard">
-                    <div id="groupCard">
-                        <div id="img">
-                            <img src="/img/T-shirt1.webp" alt="" height="350px">
-                            <button id="forPrice">$15.18</button>
-                        </div>
-                        <div id="icon">
-                            <img class="trush" src="/img/trash.png" alt="" width="50px">
-                            <img class="edite" src="/img/edite.png" alt="" width="30px" height="35px">
-                        </div>
-                    </div>
-                    <div id="groupCard">
-                        <div id="img">
-                            <img src="/img/T-shirt2.webp" alt="" height="350px">
-                            <button id="forPrice">$15.18</button>
-                        </div>
-                        <div id="icon">
-                            <img class="trush" src="/img/trash.png" alt="" width="50px">
-                            <img class="edite" src="/img/edite.png" alt="" width="30px" height="35px">
-                        </div>
-                    </div>
-                    <div id="groupCard">
-
-                        <div id="img">
-                            <img src="/img/T-shirt3.webp" alt="" height="350px">
-                            <button id="forPrice">$15.18</button>
-                        </div>
-                        <div id="icon">
-                            <img class="trush" src="/img/trash.png" alt="" width="50px">
-                            <img class="edite" src="/img/edite.png" alt="" width="30px" height="35px">
-                        </div>
-                    </div>
-                    <div id="groupCard">
-                        <div id="img">
-                            <img src="/img/T-shirt4.webp" alt="" height="350px">
-                            <button id="forPrice">$15.18</button>
-                        </div>
-                        <div id="icon">
-                            <img class="trush" src="/img/trash.png" alt="" width="50px">
-                            <img class="edite" src="/img/edite.png" alt="" width="30px" height="35px">
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+           
+        </div>
+        <div class="datafromCustomer" style="display:none;">
+            <div class="aboutCustomer">
+            </div>
         </div>
     </div>
     <div id="dialog-info">
@@ -93,8 +45,8 @@
             <input id="color" type="text" placeholder="Colors"/>
             <label>Size</label>
             <input id="size" type="text" placeholder="size"/>
-            <label>Purches</label>
-            <input id="purches" type="number" placeholder="purches"/>
+            <label>ID</label>
+            <input id="id" type="number" placeholder="ID"/>
 
             <label for="">Img</label> 
             <input id="image" type="text" placeholder="images"  id="avatar" name="avatar"/>
@@ -103,17 +55,66 @@
   
           <menu>
             <button id="cancel" onclick="toCancels()">Cancel</button>
-            <button id="create" >Create</button>
+            <button id="create">Create</button>
+            <button id="edite1" >edite</button>
           </menu>
         </dialog>
     </div>
-    <div class="datafromCustomer" style="display:none ;">
-        <p class="getNameCus">Name: <span id="getNameCus" ></span></p>
-        <p class="getEamilCus">Email:<span id="getEamilCus"></span></p>
-        <p class="getPhoneCus">Phone Number:<spa id="getPhoneCus"></span></p>
-        <p class="getlocationCus">location:<span id="getlocationCus"></span></p>
-        <p class="getpurchesCus">Purches:<span id="getpurchesCus"></span></p>
-
+    <div class="foot">
+        <div class="footer">   
+            <div class="f-center">
+                <div class="title">Follow us</div>
+                <div class="data">
+                    <div class="left">
+                        <img src="https://img.freepik.com/free-icon/facebook-logo-with-rounded-corners_318-9850.jpg?w=2000" width="25px" height="25px" alt="">
+                        <span>Smart Shop Ecommerce</span>
+                    </div>
+                    <div class="left">
+                        <img src="https://i.pinimg.com/736x/fd/dc/c6/fddcc635671b4fdf2c9b0e5ee3714c60.jpg" width="25px" height="25px"  alt="">
+                        <span>Smart Shop Ecommerce</span>
+                    </div>
+                    <div class="left">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBt9jc6ODN8MlnvRaYN86sx6lZgWbn7ccJrA&usqp=CAU"  width="25px" height="25px" alt="">
+                        <span>Smart Shop Ecommerce</span>
+                    </div>
+                    <div class="left">
+                        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGpOgeiwwZ5wa21sHgcgAMCGSpKN5HI79-xTZrlfHdgBQBwzTXbGwN4sQZtW4pe4KVKNM&usqp=CAU"  width="25px" height="25px"  alt="">
+                        <span>Smart Shop Ecommerce</span>
+                    </div>
+                    <div class="left">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4miu2-MfWSK0wCphMwz-Cl8v_C2413_ZC73EKgcZAnE8GQuVeJzwlCpQPgqwyYfZLUTw&usqp=CAU" width="25px" height="25px" alt="">
+                        <span>Smart Shop Ecommerce</span>
+                    </div>
+                </div>
+            </div>
+            <div class="f-left">
+                <div class="title">Contact</div>
+                <div class="data">
+                    <div class="left">         
+                        <i class="material-icons">call</i>
+                        <span>092 712 823</span>
+                    </div>
+                    <div class="left">
+                        <i class="material-icons">mail</i>
+                        <span>sreypov48052@gmail.com</span>
+                    </div>
+                    <div class="left">
+                        <i class="material-icons">my_location</i>
+                        <span>street 371, phnom penh city</span>
+                    </div>
+                </div>
+            </div>
+            <div class="f-right">
+                <div class="title">Service</div>
+                <div class="data">   
+                    <p>+ Help to find job</p>
+                    <p>+ Consultant about job</p>
+                    <p>+ Advertise about job</p>
+                    <p>+ Guide about chance of job</p>
+                </div>
+            </div>
+        </div>
+        <p id="bt">Email: cfjobcambodia.com.kh</p>
     </div>
 </body>
 <!-- <script src="/page/customer/app.js"></script> -->
